@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.hfad.cvstore.CvInfo">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter CV Detail: "
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter CV Title"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <EditText
+        android:id="@+id/holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your name"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Project Details:"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/projectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="EnterProject Name"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <EditText
+        android:id="@+id/projectDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="About Your Project"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+    <EditText
+        android:id="@+id/projectLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Project Link"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Educational Background:"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Last degree"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <EditText
+        android:id="@+id/institution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Institution Name"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your CGPA"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <EditText
+        android:id="@+id/passYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter passing Year"
+        android:layout_weight="1"
+        android:layout_margin="1dp"/>
+
+    <Button
+        android:id="@+id/saveInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="end"
+        android:text="Save"/>
+
+
+</LinearLayout>
