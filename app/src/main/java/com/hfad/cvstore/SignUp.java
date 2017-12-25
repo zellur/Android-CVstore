@@ -44,6 +44,10 @@ public class SignUp extends AppCompatActivity {
 
                   Toast.makeText(SignUp.this, "user successfully added", Toast.LENGTH_SHORT).show();
                   Intent intent = new Intent(SignUp.this,MainActivity.class);
+                  name.setText("");
+                  email.setText("");
+                 passowrd.setText("");
+                 phone.setText("");
                   startActivity(intent);
 
               }else{

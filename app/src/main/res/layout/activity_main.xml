@@ -14,23 +14,43 @@
         android:id="@+id/logo"
         android:layout_width="500dp"
         android:layout_height="300dp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo"
+        android:layout_weight="5"/>
+
+    <EditText
+        android:id="@+id/loginname"
+        android:layout_margin="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter your username"
+        android:layout_weight="1"/>
+
+    <EditText
+        android:id="@+id/loginpass"
+        android:layout_margin="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter your password"
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sign in"/>
+        android:text="sign in"
+        android:layout_weight="1"/>
     <Button
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sign up"/>
+        android:text="sign up"
+        android:layout_weight="1"/>
     <Button
         android:id="@+id/find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find cv"/>
+        android:text="Find cv"
+        android:layout_weight="1"/>
 
 
 </LinearLayout>

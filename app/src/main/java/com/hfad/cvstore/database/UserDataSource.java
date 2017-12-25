@@ -81,4 +81,22 @@ public class UserDataSource {
 
 
     }
+
+    public String getSingleEntry(String userName){
+
+        this.open();
+
+        Cursor cursor=database.query(UserDatabaseHelper.USER_TABLE,null,UserDatabaseHelper.USER_COL_NAME+"=?",new String[]{userName},null,null,null);
+        if(cursor.getCount()<1){
+            cursor.close();
+
+            return "not exist";
+        }else {
+            cursor.moveToFirst();
+            String password = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_COL_PASSWORD));
+            cursor.close();
+            this.close();
+            return password;
+        }
+    }
 }
