@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class UserList extends AppCompatActivity {
 
     private ListView list;
-    private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<User> users;
     private UserDataSource source;
     private UserAdapter adapter;
     @Override
