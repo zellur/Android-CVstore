@@ -1,7 +1,10 @@
 package com.hfad.cvstore;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.hfad.cvstore.database.User;
@@ -25,6 +28,14 @@ public class UserList extends AppCompatActivity {
         users = source.getUser();
         adapter = new UserAdapter(this,users);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(UserList.this,YourCV.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

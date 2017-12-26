@@ -72,7 +72,7 @@
         android:id="@+id/degree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Last degree"
+        android:hint="Enter Your degree"
         android:layout_weight="1"
         android:layout_margin="1dp"/>
 

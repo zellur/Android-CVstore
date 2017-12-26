@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.hfad.cvstore.YourCV">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Welcome to your CV"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/cvDet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/cvProject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/cvEdu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="call this person"/>
+
+
+</LinearLayout>

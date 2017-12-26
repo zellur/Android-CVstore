@@ -19,7 +19,8 @@
         <activity android:name=".SignUp" />
         <activity android:name=".UserList" />
         <activity android:name=".CreateCv" />
-        <activity android:name=".CvInfo"></activity>
+        <activity android:name=".CvInfo" />
+        <activity android:name=".YourCV"></activity>
     </application>
 
 </manifest>
