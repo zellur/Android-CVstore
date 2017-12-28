@@ -58,7 +58,7 @@ private EditText cvTitle,cvName,projectName,projectDesc,projectLink,eduDegree,ed
 
                     Toast.makeText(CvInfo.this, "Your CV has been saved successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(CvInfo.this,YourCV.class);
+                    Intent intent = new Intent(CvInfo.this,UserList.class);
                     startActivity(intent);
                 } else{
 

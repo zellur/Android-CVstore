@@ -38,7 +38,7 @@ public class YourCV extends AppCompatActivity {
         button = findViewById(R.id.call);
         source = new UserDataSource(this);
 
-        id = getIntent().getIntExtra("id", 2);
+        id = getIntent().getIntExtra("id", 0);
 
         details = source.getCv();
         projects = source.getProject();
@@ -63,19 +63,8 @@ public class YourCV extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = "12345";
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
-                if (ActivityCompat.checkSelfPermission(YourCV.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-                startActivity(intent);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                startActivity(Intent.createChooser(intent,"calling...."));
             }
         });
 
