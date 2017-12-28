@@ -16,7 +16,7 @@ public class SignUp extends AppCompatActivity {
    private EditText name,email,passowrd,phone;
     private Button signup;
     private UserDataSource source;
-
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,30 +30,67 @@ public class SignUp extends AppCompatActivity {
        signup = findViewById(R.id.signup2);
        source = new UserDataSource(this);
 
+       id = getIntent().getIntExtra("id",0);
+
+       if(id>0){
+
+           User user = source.getUser(id);
+           name.setText(user.getName());
+           email.setText(user.getEmail());
+           passowrd.setText(user.getPassword());
+           phone.setText(user.getPassword());
+           signup.setText("Update");
+       }
+
        signup.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               String username= name.getText().toString();
-               String useremail= email.getText().toString();
-               String userpass= passowrd.getText().toString();
-               String userphone= phone.getText().toString();
 
-              boolean status= source.insertUser(new User(username,useremail,userpass,userphone));
+               if (id > 0) {
+                   String username = name.getText().toString();
+                   String useremail = email.getText().toString();
+                   String userpass = passowrd.getText().toString();
+                   String userphone = phone.getText().toString();
 
-              if(status){
+                   boolean status = source.updateUser(new User(id,username, useremail, userpass, userphone));
+                   if (status) {
 
-                  Toast.makeText(SignUp.this, "user successfully added", Toast.LENGTH_SHORT).show();
-                  Intent intent = new Intent(SignUp.this,MainActivity.class);
-                  name.setText("");
-                  email.setText("");
-                 passowrd.setText("");
-                 phone.setText("");
-                  startActivity(intent);
+                       Toast.makeText(SignUp.this, "user successfully updated", Toast.LENGTH_SHORT).show();
+                       Intent intent = new Intent(SignUp.this, MainActivity.class);
+                       name.setText("");
+                       email.setText("");
+                       passowrd.setText("");
+                       phone.setText("");
+                       startActivity(intent);
+                   } else {
 
-              }else{
+                       Toast.makeText(SignUp.this, "failed to update", Toast.LENGTH_SHORT).show();
+                   }
 
-                  Toast.makeText(SignUp.this, "failed to insert", Toast.LENGTH_SHORT).show();
-              }
+
+               } else {
+                   String username = name.getText().toString();
+                   String useremail = email.getText().toString();
+                   String userpass = passowrd.getText().toString();
+                   String userphone = phone.getText().toString();
+
+                   boolean status = source.insertUser(new User(username, useremail, userpass, userphone));
+
+                   if (status) {
+
+                       Toast.makeText(SignUp.this, "user successfully added", Toast.LENGTH_SHORT).show();
+                       Intent intent = new Intent(SignUp.this, MainActivity.class);
+                       name.setText("");
+                       email.setText("");
+                       passowrd.setText("");
+                       phone.setText("");
+                       startActivity(intent);
+
+                   } else {
+
+                       Toast.makeText(SignUp.this, "failed to insert", Toast.LENGTH_SHORT).show();
+                   }
+               }
            }
        });
     }

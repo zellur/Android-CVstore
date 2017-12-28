@@ -32,7 +32,10 @@ public class UserList extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                int userId = users.get(position).getId();
                 Intent intent = new Intent(UserList.this,YourCV.class);
+                intent.putExtra("id",userId);
                 startActivity(intent);
             }
         });

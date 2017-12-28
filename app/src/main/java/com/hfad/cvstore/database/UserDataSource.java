@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-import static android.icu.text.MessagePattern.ArgType.SELECT;
+
 
 /**
  * Created by rakib on 12/25/17.
@@ -50,7 +50,29 @@ public class UserDataSource {
         }else{
             return false;
         }
+
     }
+
+    public boolean updateUser(User user){
+
+        this.open();
+
+        ContentValues values = new ContentValues();
+        values.put(UserDatabaseHelper.USER_COL_NAME,user.getName());
+        values.put(UserDatabaseHelper.USER_COL_EMAIL,user.getEmail());
+        values.put(UserDatabaseHelper.USER_COL_PASSWORD,user.getPassword());
+        values.put(UserDatabaseHelper.USER_COL_PHONE,user.getPhone());
+
+        int updatedRow = database.update(UserDatabaseHelper.USER_TABLE,values,UserDatabaseHelper.USER_COL_ID+"="+user.getId(),null);
+        if(updatedRow>0){
+
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 
     public ArrayList<User> getUser(){
 
@@ -83,6 +105,38 @@ public class UserDataSource {
 
 
     }
+
+    public User getUser(int userId){
+
+        this.open();
+
+        User user = null;
+
+        Cursor cursor = database.query(UserDatabaseHelper.USER_TABLE,null,UserDatabaseHelper.USER_COL_ID+"="+userId,null,null,null,null);
+
+        if(cursor !=null && cursor.getCount() > 0){
+
+
+            cursor.moveToFirst();
+
+
+            int id = cursor.getInt(cursor.getColumnIndex(UserDatabaseHelper.USER_COL_ID));
+            String userName = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_COL_NAME));
+            String userEmail = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_COL_EMAIL));
+            String userPass = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_COL_PASSWORD));
+            String userPhone = cursor.getString(cursor.getColumnIndex(UserDatabaseHelper.USER_COL_PHONE));
+
+            user = new User(id,userName,userEmail,userPass,userPhone);
+
+        }
+
+        cursor.close();
+        this.close();
+        return user;
+
+
+    }
+
 
     public boolean insertCV(CvDetail cvDetail){
 

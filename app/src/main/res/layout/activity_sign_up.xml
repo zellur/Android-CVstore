@@ -27,6 +27,7 @@
         android:id="@+id/userpass"
         android:layout_margin="1dp"
         android:hint="enter your password"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
